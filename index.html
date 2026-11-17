@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박재희 | 포트폴리오</title>
+<meta name="description" content="레저해양스포츠학과 박재희의 포트폴리오. 헬스 트레이너와 맨즈피지크 선수를 목표로 합니다.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;900&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e5e9ea; --ink:#0c2a30; --muted:#4d6468; --line:#b7c3c6; --accent:#e4572e; --surface:#f3f6f6; --on-accent:#fff;
+  --nav-h:64px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b2025;--ink:#e8f0f0;--muted:#9bb2b5;--line:#25454b;--accent:#ff7a50;--surface:#11303670;--on-accent:#0b2025;color-scheme:dark}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
+.brand{font-weight:900;text-decoration:none;font-size:18px;letter-spacing:-.02em}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:15px;padding:6px 0;border-bottom:2px solid transparent;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+nav a.active{color:var(--ink);border-bottom-color:var(--accent)}
+.toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink);font:inherit;font-size:15px;padding:6px 14px;cursor:pointer}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--accent)}
+
+/* hero */
+.hero{padding:12vh 0 14vh}
+.hero h1{font-weight:900;font-size:clamp(76px,20vw,220px);line-height:.92;letter-spacing:-.05em;margin:0 0 36px}
+.hero p{font-family:"Noto Serif KR",serif;font-size:clamp(19px,2.4vw,26px);line-height:1.7;max-width:30em;margin:0 0 36px;color:var(--muted)}
+.hero p b{color:var(--ink);font-weight:600}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:500;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{filter:brightness(.92)}
+
+/* sections */
+section{border-top:1px solid var(--line);padding:72px 0}
+h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.03em;margin:0 0 36px;line-height:1.2}
+.split{display:grid;grid-template-columns:1fr 2fr;gap:24px 48px}
+.split h2{margin:0}
+.prose p{font-family:"Noto Serif KR",serif;font-size:18px;line-height:1.95;margin:0 0 1.1em;max-width:36em}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;margin:28px 0 0;font-size:16px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-weight:500}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px}
+.skill h3{margin:0 0 10px;font-size:22px;font-weight:900}
+.skill p{margin:0;color:var(--muted)}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project{border:1.5px dashed var(--line);border-radius:10px;padding:28px;min-height:170px}
+.project h3{margin:0 0 8px;font-size:20px}
+.project p{margin:0;color:var(--muted)}
+.note{margin-top:20px;color:var(--muted);font-size:15px}
+
+.goals{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.goals li{padding:26px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:8px 48px;align-items:baseline}
+.goals strong{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.02em}
+.goals span{color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:14px}
+
+@media (max-width:760px){
+  .toggle{display:block}
+  nav{position:absolute;left:0;right:0;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 24px 16px}
+  nav a{display:block;padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
+  nav a.active{border-bottom-color:var(--accent)}
+  .split,.goals li{grid-template-columns:1fr}
+  .skills,.projects{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#home">박재희</a>
+    <button class="toggle" id="toggle" aria-expanded="false" aria-controls="menu">메뉴</button>
+    <nav id="menu" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#home">홈</a></li>
+        <li><a href="#about">자기소개</a></li>
+        <li><a href="#skills">역량</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#goals">진로 목표</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main>
+  <section class="hero" id="home" style="border-top:0">
+    <div class="wrap">
+      <h1>박재희</h1>
+      <p><b>레저해양스포츠학과</b>에서 공부하며 헬스 트레이너와 맨즈피지크 선수를 목표로 하고 있습니다.</p>
+      <div class="btns">
+        <a class="btn primary" href="#about">자기소개 보기</a>
+        <a class="btn" href="#goals">진로 목표 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap split">
+      <h2>자기소개</h2>
+      <div class="prose">
+        <p>안녕하세요, 레저해양스포츠학과에 재학 중인 박재희입니다. 관심 분야는 헬스이고, 학교 학술제 대회에 참여한 경험이 있습니다.</p>
+        <p>저의 가장 큰 강점은 끈기입니다. 이 끈기를 바탕으로 헬스 트레이너가 되고, 맨즈피지크 선수로도 활동하는 것이 목표입니다.</p>
+        <dl class="facts">
+          <dt>이름</dt><dd>박재희</dd>
+          <dt>전공</dt><dd>레저해양스포츠학과</dd>
+          <dt>관심 분야</dt><dd>헬스</dd>
+          <dt>경험</dt><dd>학교 학술제 대회 참여</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>역량</h2>
+      <div class="skills">
+        <article class="skill"><h3>끈기</h3><p>목표를 향해 꾸준히 이어 가는 힘이 저의 가장 큰 강점입니다.</p></article>
+        <article class="skill"><h3>대회 참여 경험</h3><p>학교 학술제 대회에 참여한 경험이 있습니다.</p></article>
+        <article class="skill"><h3>전공 지식</h3><p>레저해양스포츠학과에서 스포츠 분야를 공부하고 있습니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>프로젝트</h2>
+      <div class="projects">
+        <article class="project" style="border-style:solid"><h3>학교 학술제 대회 참여</h3><p>학교 학술제 대회에 참여했습니다. 주제와 결과 같은 세부 내용을 여기에 적어 주세요.</p></article>
+        <article class="project"><h3>프로젝트 2</h3><p>제목과 내용을 여기에 적어 주세요.</p></article>
+      </div>
+      <p class="note">점선 칸은 비어 있는 자리입니다. 파일의 프로젝트 영역에 직접 추가할 수 있습니다.</p>
+    </div>
+  </section>
+
+  <section id="goals">
+    <div class="wrap">
+      <h2>진로 목표</h2>
+      <ul class="goals">
+        <li><strong>헬스 트레이너</strong><span>관심 분야인 헬스와 전공 공부를 바탕으로 다른 사람의 운동을 돕는 트레이너가 되겠습니다.</span></li>
+        <li><strong>맨즈피지크 선수</strong><span>끈기를 바탕으로 꾸준히 몸을 만들어 맨즈피지크 선수로 활동하겠습니다.</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 박재희</div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.getElementById('toggle'),menu=document.getElementById('menu'),
+      links=[].slice.call(menu.querySelectorAll('a')),
+      ids=links.map(function(a){return a.getAttribute('href').slice(1)}),
+      progress=document.getElementById('progress');
+
+  toggle.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open);
+  });
+  links.forEach(function(a){a.addEventListener('click',function(){
+    menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');
+  })});
+
+  function update(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    progress.style.width=(max>0?window.scrollY/max*100:0)+'%';
+    var current=ids[0],y=window.scrollY+120;
+    ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.offsetTop<=y)current=id});
+    if(max>0&&window.scrollY>=max-4)current=ids[ids.length-1];
+    links.forEach(function(a){
+      var on=a.getAttribute('href')==='#'+current;
+      a.classList.toggle('active',on);
+      if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
+</body>
+</html>
